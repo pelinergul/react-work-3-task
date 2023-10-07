@@ -1,7 +1,15 @@
 import React from 'react'
+import { TaskShow } from './TaskShow'
 
-export const TaskList = () => {
+export const TaskList = ({tasks}) => {
+    
   return (
-    <div></div>
+    <div className='task-list'>
+        {tasks.map((task)=> {
+            return(
+                <TaskShow key={task.id} task={task} />
+            )
+        })}
+    </div>
   )
 }
